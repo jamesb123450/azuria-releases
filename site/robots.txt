@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jamesb123450.github.io/azuria-releases/sitemap.xml

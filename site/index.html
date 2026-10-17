@@ -1,0 +1,557 @@
+<!doctype html>
+    <html lang="en-GB">
+      <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Azuria Launcher — Minecraft instances, organised</title>
+        <meta name="description" content="A Windows Minecraft Java launcher with Vanilla and Fabric launching, saved skins, instance controls and automatic updates." />
+        <meta name="theme-color" content="#15161c" />
+        <meta name="color-scheme" content="dark" />
+        <meta
+          http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src https://api.github.com; object-src 'none'; base-uri 'none'; form-action 'none'"
+        />
+        <link rel="canonical" href="https://jamesb123450.github.io/azuria-releases/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Azuria Launcher — Minecraft instances, organised" />
+        <meta property="og:description" content="A Windows Minecraft Java launcher with Vanilla and Fabric launching, saved skins, instance controls and automatic updates." />
+        <meta property="og:image" content="https://jamesb123450.github.io/azuria-releases/assets/library.webp" />
+        <meta property="og:url" content="https://jamesb123450.github.io/azuria-releases/" />
+        <meta name="twitter:card" content="summary_large_image" />
+        
+        <link rel="preload" as="image" href="/azuria-releases/assets/minecraft-cherry-grove.webp" />
+        <link rel="icon" href="/azuria-releases/assets/azuria.png" type="image/png" />
+        <link
+          rel="preload"
+          href="/azuria-releases/assets/inter-latin.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        />
+        <link
+          rel="preload"
+          href="/azuria-releases/assets/sora-semibold.ttf"
+          as="font"
+          type="font/ttf"
+          crossorigin
+        />
+        <link rel="stylesheet" href="/azuria-releases/site.css" />
+        <script type="module" src="/azuria-releases/site.js"></script>
+      </head>
+      <body class="home-page">
+        <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="wordmark" href="/azuria-releases/" aria-label="Azuria home"
+          ><img
+            src="/azuria-releases/assets/azuria.png"
+            width="44"
+            height="44"
+            alt=""
+          /><span>azuria<span class="wordmark-small">LAUNCHER</span></span></a
+        ><button
+          class="menu-toggle"
+          data-menu-toggle
+          aria-controls="site-navigation"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <svg
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M4 7h16M4 12h16M4 17h16"/>
+  </svg>
+        </button>
+        <nav id="site-navigation" aria-label="Main navigation">
+          <a class="section-nav" href="#features">Launcher</a><a class="section-nav" href="#appearance">Appearance</a><a class="section-nav" href="#updates">Updates</a>
+          <a
+      href="/azuria-releases/help/"
+      
+      >Help</a
+    ><a
+      href="/azuria-releases/contact/"
+      
+      >Contact</a
+    ><a
+            class="github-link"
+            href="https://github.com/jamesb123450/azuria-releases"
+            >GitHub <svg
+    width="13"
+    height="13"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M14 4h6v6m0-6L10 14M10 4H4v16h16v-6"/>
+  </svg></a
+          >
+        </nav>
+        <a class="header-download" href="/azuria-releases/downloads/"
+          >Download <svg
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4"/>
+  </svg></a
+        >
+      </div>
+    </header>
+        <main id="main" tabindex="-1">
+          <section class="brand-hero">
+        <canvas
+          class="hero-scene"
+          data-panorama
+          data-panorama-base="/azuria-releases/assets/panorama-"
+          aria-hidden="true"
+        ></canvas>
+        <div class="hero container">
+          <div class="hero-copy">
+            <img
+              class="hero-mark"
+              src="/azuria-releases/assets/azuria.png"
+              width="160"
+              height="160"
+              alt=""
+            />
+            <h1>Azuria Launcher</h1>
+            <p class="hero-tagline">A home for your Minecraft instances.</p>
+            <div class="hero-actions">
+              <a
+      class="button primary"
+      data-download-link
+      data-fallback-label="View Windows download"
+      href="https://github.com/jamesb123450/azuria-launcher/releases/latest"
+      
+      ><svg
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4"/>
+  </svg><span data-download-label>View Windows download</span></a
+    ><a
+                class="quiet-link"
+                href="#features"
+                >Explore the launcher</a
+              >
+            </div>
+            <p class="download-meta">
+              <span data-latest-version>v0.2.133</span> for Windows x64
+            </p>
+            <p class="hero-disclosure">
+              <strong>Development preview.</strong> Windows x64 · Minecraft Java
+              Edition. Vanilla and Fabric launching supported.
+              <a href="/azuria-releases/help/#status">Current status</a>
+            </p>
+          </div>
+        </div>
+      </section>
+      <section
+        id="features"
+        class="section container launcher-showcase"
+        aria-label="Azuria launcher features"
+      >
+        <figure class="hero-shot">
+          <img
+            src="/azuria-releases/assets/library.webp"
+            alt="Azuria’s current library with sample Vanilla and Fabric instances, Play controls and a player skin head."
+            width="1280"
+            height="900"
+            fetchpriority="high"
+          />
+          <figcaption>
+            Current launcher interface with sample instances and a demo account.
+          </figcaption>
+        </figure>
+        <div class="section-intro">
+          <h2>Organise your Minecraft instances.</h2>
+          <p>
+            Keep version and loader settings separate. Search, group and
+            favourite your setups, and give each one its own icon.
+          </p>
+        </div>
+        <div class="feature-details">
+          <div>
+            <h3>A setup for each version</h3>
+            <p>
+              Choose Minecraft and loader versions without mixing up your
+              instance settings.
+            </p>
+          </div>
+          <div>
+            <h3>Find the right instance</h3>
+            <p>
+              Search your library, group related setups and keep favourites
+              close.
+            </p>
+          </div>
+          <div>
+            <h3>Recognise it at a glance</h3>
+            <p>Choose an icon and colour, or add your own artwork.</p>
+          </div>
+        </div>
+        <p class="small-note">
+          Play prepares game files and Java automatically for Vanilla and
+          Fabric. Forge, NeoForge and Quilt launching remain in development.
+        </p>
+        <details class="create-detail">
+          <summary>See instance creation</summary>
+          <figure class="detail-shot">
+            <img
+              src="/azuria-releases/assets/create.webp"
+              alt="Azuria’s Create instance screen with the Custom setup option."
+              width="1280"
+              height="900"
+              loading="lazy"
+            />
+            <figcaption>
+              Create an instance, then choose its version and loader settings.
+            </figcaption>
+          </figure>
+        </details>
+      </section>
+      <section
+        class="section container product-tour"
+        aria-labelledby="tour-heading"
+      >
+        <div class="section-intro">
+          <h2 id="tour-heading">More of your launcher, in one place.</h2>
+          <p>Manage how you play, how you look and what each instance needs.</p>
+        </div>
+        <article class="product-feature">
+          <div class="product-feature-copy">
+            <span class="section-kicker">Skins &amp; capes</span>
+            <h3>A wardrobe of your own.</h3>
+            <p>
+              Save skins locally, turn the character preview to inspect them,
+              choose Classic or Slim arms and select a cape you own. Apply your
+              choice to your Minecraft account when you’re ready.
+            </p>
+            <p class="small-note">
+              Official Steve texture shown with a demo account. Cape choices
+              depend on your account.
+            </p>
+          </div>
+          <figure class="detail-shot">
+            <img
+              src="/azuria-releases/assets/skins.webp"
+              width="1280"
+              height="900"
+              loading="lazy"
+              alt="Current Azuria skin selector with a rotatable Steve preview and a saved skin card."
+            />
+            <figcaption>
+              Saved skins and an interactive character preview.
+            </figcaption>
+          </figure>
+        </article>
+        <article class="product-feature reverse">
+          <div class="product-feature-copy">
+            <span class="section-kicker">Launcher settings</span>
+            <h3>Make it feel right.</h3>
+            <p>
+              Appearance, account controls, Java, memory and window defaults sit
+              in a centred settings popup. Save when you’re happy, or Reset to
+              return to your last saved values.
+            </p>
+            <p class="small-note">
+              Features still in development are marked in the app.
+            </p>
+          </div>
+          <figure class="detail-shot">
+            <img
+              src="/azuria-releases/assets/settings.webp"
+              width="1280"
+              height="900"
+              loading="lazy"
+              alt="Azuria’s centred settings popup with category navigation, theme cards and fixed Save and Reset buttons."
+            />
+            <figcaption>
+              One settings popup with changes kept until you save.
+            </figcaption>
+          </figure>
+        </article>
+        <article class="product-feature">
+          <div class="product-feature-copy">
+            <span class="section-kicker">Your instances</span>
+            <h3>Everything for one world.</h3>
+            <p>
+              Open an instance for its content, worlds, screenshots and live
+              logs. Use per-instance overrides for Java, memory and window
+              preferences without changing your launcher defaults.
+            </p>
+            <p class="small-note">
+              Play becomes Stop during preparation and while Minecraft runs.
+              Screenshots can be previewed, exported or opened in their folder.
+            </p>
+          </div>
+          <figure class="detail-shot">
+            <img
+              src="/azuria-releases/assets/instance.webp"
+              width="1280"
+              height="900"
+              loading="lazy"
+              alt="Azuria’s current instance page with Play, content navigation, logs, screenshots and settings controls."
+            />
+            <figcaption>
+              Instance detail view with sample library content.
+            </figcaption>
+          </figure>
+        </article>
+      </section>
+      <section id="appearance" class="appearance-section">
+        <div class="container appearance-grid">
+          <div class="section-copy">
+            <h2>Choose your appearance.</h2>
+            <p>
+              Dark, light or your system setting. The same controls with
+              Azuria’s pink and blue details.
+            </p>
+            <div
+              class="preview-switch"
+              role="group"
+              aria-label="Launcher appearance preview"
+            >
+              <button
+                aria-pressed="true"
+                data-preview-image="/azuria-releases/assets/library.webp"
+                data-preview-alt="Azuria’s dark library with sample instance configurations."
+                data-preview-caption="Dark appearance, populated library"
+              >
+                Dark</button
+              ><button
+                aria-pressed="false"
+                data-preview-image="/azuria-releases/assets/library-light.webp"
+                data-preview-alt="Azuria’s light appearance with the same sample instances."
+                data-preview-caption="Light appearance, sample library"
+              >
+                Light
+              </button>
+            </div>
+            <p class="small-note">
+              The same sample library in both themes. This control switches the
+              launcher preview; the website keeps its dark appearance.
+            </p>
+          </div>
+          <figure class="appearance-shot">
+            <img
+              data-theme-preview
+              src="/azuria-releases/assets/library.webp"
+              width="1280"
+              height="900"
+              alt="Azuria’s dark library with sample instance configurations."
+              loading="lazy"
+            />
+            <figcaption data-preview-caption>
+              Dark appearance, populated library
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section id="updates" class="section container updates-section">
+        <div class="section-topline">
+          <div>
+            <h2>Latest release</h2>
+            <p>What changed, straight from the published notes.</p>
+          </div>
+          <a class="text-link" href="/azuria-releases/changelog/">Full changelog</a>
+        </div>
+        <div class="update-grid">
+          <article
+                  class="update-card"
+                  data-latest-card
+                >
+                  <a
+                    class="update-cover"
+                    href="https://github.com/jamesb123450/azuria-launcher/releases/tag/v0.2.133"
+                    aria-label="Read v0.2.133 release notes"
+                    ><span>v0.2.133</span
+                    ><small>Latest release</small></a
+                  >
+                  <div class="update-body">
+                    <time datetime="2026-10-17T17:47:44Z"
+                      >17 October 2026</time
+                    >
+                    <h3>What’s new</h3>
+                    <p>Kept additional content directly on the instance page with All/Mods/Resource packs filters, sorting, uploads, Discover browsing, selection actions and a compact project/version/actions table.</p>
+                    <a
+                      class="text-link"
+                      href="https://github.com/jamesb123450/azuria-launcher/releases/tag/v0.2.133"
+                      >Read release notes</a
+                    >
+                  </div>
+                </article><article
+                  class="update-card"
+                  
+                >
+                  <a
+                    class="update-cover"
+                    href="https://github.com/jamesb123450/azuria-launcher/releases/tag/v0.2.130"
+                    aria-label="Read v0.2.130 release notes"
+                    ><span>v0.2.130</span
+                    ></a
+                  >
+                  <div class="update-body">
+                    <time datetime="2026-10-17T17:17:14Z"
+                      >17 October 2026</time
+                    >
+                    <h3>Earlier release</h3>
+                    <p>Added real project artwork and dedicated Description, Versions and Gallery pages using provider metadata, with sanitised rich descriptions and shared installation review.</p>
+                    <a
+                      class="text-link"
+                      href="https://github.com/jamesb123450/azuria-launcher/releases/tag/v0.2.130"
+                      >Read release notes</a
+                    >
+                  </div>
+                </article><article
+                  class="update-card"
+                  
+                >
+                  <a
+                    class="update-cover"
+                    href="https://github.com/jamesb123450/azuria-launcher/releases/tag/v0.2.127"
+                    aria-label="Read v0.2.127 release notes"
+                    ><span>v0.2.127</span
+                    ></a
+                  >
+                  <div class="update-body">
+                    <time datetime="2026-10-17T16:45:25Z"
+                      >17 October 2026</time
+                    >
+                    <h3>Earlier release</h3>
+                    <p>Connected Discover to live Modrinth and CurseForge search for mods, modpacks, datapacks and resource packs, retaining the right-hand filter sidebar.</p>
+                    <a
+                      class="text-link"
+                      href="https://github.com/jamesb123450/azuria-launcher/releases/tag/v0.2.127"
+                      >Read release notes</a
+                    >
+                  </div>
+                </article>
+        </div>
+        <p class="updates-note">
+          Already using Azuria? Updates are checked automatically at startup.
+        </p>
+      </section>
+      <section class="section container questions">
+        <div>
+          <h2>Before you download</h2>
+          <p>Platform support, updates and what works today.</p>
+        </div>
+        <div class="faq-list">
+          <details>
+    <summary>Can I play Minecraft through Azuria yet?<span aria-hidden="true">+</span></summary>
+    <p>Yes. Current Windows builds prepare and launch Vanilla and Fabric instances using a verified Minecraft Java account. Other loaders and live modpack installation are still in development.</p>
+  </details><details>
+    <summary>Which platforms are supported?<span aria-hidden="true">+</span></summary>
+    <p>Current builds support Windows x64. macOS, Linux and ARM64 builds are not available.</p>
+  </details><details>
+    <summary>How do updates work?<span aria-hidden="true">+</span></summary>
+    <p>Azuria checks for signed updates at startup and downloads them automatically. A restart countdown installs the update; choose Later to postpone. Updates wait while Minecraft is running.</p>
+  </details>
+        </div>
+      </section> 
+          <aside
+            class="latest-notice container"
+            aria-label="Latest Azuria release"
+            data-latest-notice
+            data-built-tag="v0.2.133"
+          >
+            <div>
+              <span class="section-kicker">Latest release</span
+              ><strong data-latest-version>v0.2.133</strong
+              ><span data-latest-date>17 October 2026</span>
+              <p data-release-status aria-live="polite">
+                Release information from the last successful build. GitHub
+                always has the current download.
+              </p>
+            </div>
+            <a class="button secondary" href="https://github.com/jamesb123450/azuria-releases/releases/latest"
+              >View latest release <svg
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M14 4h6v6m0-6L10 14M10 4H4v16h16v-6"/>
+  </svg></a
+            >
+          </aside>
+        </main>
+        <footer class="site-footer">
+    <div class="footer-top">
+      <a class="wordmark" href="/azuria-releases/"
+        ><img src="/azuria-releases/assets/azuria.png" width="30" height="30" alt="" /><span
+          >azuria</span
+        ></a
+      >
+      <p>Minecraft Java, organised your way.</p>
+      <a href="https://github.com/jamesb123450/azuria-releases">View the project <svg
+    width="13"
+    height="13"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M14 4h6v6m0-6L10 14M10 4H4v16h16v-6"/>
+  </svg></a>
+    </div>
+    <div class="footer-bottom">
+      <span>An independent Minecraft Java launcher.</span>
+      <div>
+        <a href="/azuria-releases/privacy/">Privacy policy</a
+        ><a href="/azuria-releases/terms/">Terms of service</a
+        ><a href="/azuria-releases/contact/">Contact</a
+        ><a href="https://github.com/jamesb123450/azuria-releases/issues">Report an issue</a>
+      </div>
+    </div>
+    <p class="image-credit">
+      Minecraft cherry grove:
+      <a href="https://modrinth.com/resourcepack/karbin-panoramas"
+        >Karbin_Drem · Distant Shaded Panoramas</a
+      >
+      ·
+      <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a
+      >. Panorama and fallback image converted to WebP and displayed with a
+      contrast overlay. Not captured in Azuria.
+    </p>
+    <p class="disclaimer">
+      Not an official Minecraft product. Not approved by or associated with
+      Mojang or Microsoft.
+    </p>
+  </footer>
+      </body>
+    </html>

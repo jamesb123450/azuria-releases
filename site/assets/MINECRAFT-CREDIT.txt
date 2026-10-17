@@ -1,0 +1,17 @@
+Minecraft cherry-grove panorama — Overworld, day, clear weather (Minecraft 1.20)
+Creator: Karbin_Drem
+Project: Distant Shaded Panoramas
+Source: https://modrinth.com/resourcepack/karbin-panoramas
+Original image: https://cdn.modrinth.com/data/YHqclHE2/images/27760985aaf243bd3a48d1e4de9ab70eac8b63c7.png
+Licence: Creative Commons Attribution-ShareAlike 4.0 International
+https://creativecommons.org/licenses/by-sa/4.0/
+The image and its adaptation in minecraft-cherry-grove.webp remain under CC BY-SA 4.0.
+Changes: PNG converted to WebP; displayed with responsive CSS cropping and a contrast overlay.
+The source project identifies Complementary Unbound shaders, Euphoria Patches and Distant Horizons.
+This is a real Minecraft screenshot, not gameplay captured in Azuria.
+No endorsement of Azuria by the creator, shader projects, Mojang or Microsoft is implied.
+
+Panorama source version: https://modrinth.com/resourcepack/karbin-panoramas/version/4C9kGikH
+The six original Minecraft panorama faces are converted to panorama-0.webp through panorama-5.webp. A static WebGL camera displays the real captured cubemap at the viewport aspect ratio; no scenery is AI generated or extended. Those image adaptations retain CC BY-SA 4.0.
+
+Product interface captures: current Azuria Launcher, with illustrative local instance data and a demo account. The Steve skin shown in skins.webp is a Minecraft default texture, copyright Mojang/Microsoft. Captures do not show a real player’s credentials or imply a live game session.

@@ -199,9 +199,15 @@
             <p>
               The current launcher checks GitHub for updates and contacts
               version-metadata services when you use relevant version selectors.
-              Those providers receive normal network request information. The
-              current app does not include analytics collection or automatically
-              upload your logs to the project maintainer.
+              CurseForge catalogue requests use Azuria’s Cloudflare-hosted
+              content service, which receives search terms and project/file
+              identifiers to forward to CurseForge. The publisher’s API
+              credential remains server-side. Cloudflare processes normal
+              request metadata and applies rate limits; Microsoft tokens and
+              game logs are not sent to that service. Those providers receive
+              normal network request information. The current app does not
+              include analytics collection or automatically upload your logs to
+              the project maintainer.
             </p>
             <p>
               Configured Windows builds support optional Discord Rich Presence.

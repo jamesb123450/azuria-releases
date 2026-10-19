@@ -86,8 +86,8 @@
 }
 .premium-home .premium-kicker {
   font-size: 12px;
-  letter-spacing: 2.2px;
-  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  text-transform: none;
   color: var(--pink);
   font-weight: 600;
   margin: 0 0 23px;
@@ -104,7 +104,7 @@
 }
 .premium-hero h1 span {
   display: block;
-  color: #f0bfdc;
+  color: inherit;
 }
 .premium-home .premium-lead {
   font-size: 19px;
@@ -281,16 +281,12 @@
   font-size: 14px;
   margin: 0;
 }
-.provider-monogram {
-  font-size: 23px;
-  font-weight: 600;
-  color: var(--pink);
-  border-radius: 10px;
-  display: grid;
-  place-items: center;
-  min-width: 44px;
+.provider-icon {
+  display: block;
+  flex: 0 0 44px;
+  width: 44px;
   height: 44px;
-  background: #efb5d512;
+  object-fit: contain;
 }
 .premium-appearance {
   background: radial-gradient(ellipse at 15% 15%, #472b4933, transparent 65%);
@@ -397,10 +393,40 @@
   border-radius: 14px;
   overflow: hidden;
   background: var(--surface);
+  padding: 0;
+  margin: 0;
+  border: 1px solid var(--border);
+  min-width: 0;
+}
+.premium-home .update-card:first-child {
+  grid-column: auto;
+  border-color: var(--border-high);
+}
+.premium-home .update-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 .premium-home .update-cover {
-  background: linear-gradient(135deg, #322336, #20283d);
+  background: #232532;
+  width: 100%;
   min-height: 130px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+}
+.premium-home .update-cover > span {
+  font-size: clamp(22px, 2.5vw, 30px);
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+}
+.premium-home .update-cover small {
+  line-height: 1.5;
+}
+.premium-home .update-body {
+  padding: 24px;
 }
 .premium-home .update-body p {
   font-size: 14px;
@@ -633,5 +659,38 @@
   .premium-hero h1 span,
   .premium-home .premium-kicker {
     color: CanvasText;
+  }
+}
+
+.footer-credits {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.footer-credits summary {
+  cursor: pointer;
+  width: fit-content;
+  padding: 10px 0;
+}
+.premium-footer .footer-credits .image-credit {
+  max-width: 72ch;
+  margin-top: 4px;
+}
+.premium-footer .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+.premium-footer .footer-bottom span:last-child {
+  max-width: 52ch;
+}
+@media (max-width: 760px) {
+  .premium-home .update-grid {
+    grid-template-columns: 1fr;
+  }
+  .premium-footer .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
   }
 }

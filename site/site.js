@@ -26,18 +26,8 @@ document.addEventListener("keydown", (event) => {
 document.addEventListener("click", (event) => {
   if (!event.target.closest(".site-header")) closeMenu();
 });
-const screenshot = document.querySelector("[data-theme-preview]");
-for (const button of document.querySelectorAll("[data-preview-image]")) {
-  button.addEventListener("click", () => {
-    if (!screenshot) return;
-    screenshot.src = button.dataset.previewImage;
-    screenshot.alt = button.dataset.previewAlt;
-    for (const option of document.querySelectorAll("[data-preview-image]"))
-      option.setAttribute("aria-pressed", String(option === button));
-    const caption = document.querySelector("[data-preview-caption]");
-    if (caption) caption.textContent = button.dataset.previewCaption;
-  });
-}
+// Isolate optional motion so an unavailable enhancement never blocks release links.
+import("./motion.mjs").then(({ mountMotion }) => mountMotion()).catch(() => {});
 
 function updateDownloadLinks(installer) {
   for (const anchor of document.querySelectorAll("[data-download-link]")) {
@@ -172,9 +162,3 @@ if (sectionLinks.length && "IntersectionObserver" in window) {
     if (section) observer.observe(section);
   }
 }
-
-const panorama = document.querySelector("[data-panorama]");
-if (panorama)
-  import("./panorama.js")
-    .then(({ mountPanorama }) => mountPanorama(panorama))
-    .catch(() => {});

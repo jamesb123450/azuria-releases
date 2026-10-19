@@ -37,6 +37,7 @@
         />
         <link rel="stylesheet" href="/azuria-releases/site.css" />
         <link rel="stylesheet" href="/azuria-releases/premium.css" />
+        <link rel="stylesheet" href="/azuria-releases/analytics.css" />
         <script type="module" src="/azuria-releases/site.js"></script>
       </head>
       <body class="inner-page">
@@ -192,6 +193,30 @@
           <section id="website-data">
             <h2>3. Website, cookies and advertising</h2>
             <p>
+              When configured, we use Google Analytics to understand page
+              visits, device and browser information, and how the website is
+              used. The Google tag loads only after you accept analytics. Google
+              may use first-party analytics cookies and process technical
+              information, including your IP address. Advertising
+              personalisation and Google signals are disabled in our tag
+              configuration. We omit query strings and fragments from the page
+              address sent with the initial page view.
+            </p>
+            <p>
+              Use Cookie settings in the footer to accept, reject or withdraw
+              analytics consent. Your choice is stored locally for up to 180
+              days, separately from any advertising choices. Changing the
+              analytics measurement ID requires a new choice. Rejecting
+              analytics prevents the tag from loading; withdrawing consent stops
+              it and removes accessible Google Analytics cookies. Google may
+              process data outside the UK under its applicable safeguards. See
+              <a href="https://policies.google.com/privacy"
+                >Google’s privacy policy</a
+              >
+              for its handling and retention practices. We do not send account
+              details or launcher data to website analytics.
+            </p>
+            <p>
               This website does not provide user accounts. Fonts and images are
               hosted with the website. Hosting and download providers process
               technical request information, including IP addresses, browser
@@ -206,7 +231,7 @@
               GitHub’s public API.
             </p>
             <p>
-              This website does not currently set its own cookies or include analytics, advertising trackers or embedded social feeds. Optional advertising must be disclosed and the required consent controls provided before it is enabled.
+              This website has no embedded social feeds. Optional advertising must be disclosed and the required advertising consent controls provided before it is enabled.
             </p>
           </section>
           <section id="sharing">
@@ -379,7 +404,8 @@
         <a href="/azuria-releases/contact/">Contact</a
         ><a href="/azuria-releases/privacy/">Privacy policy</a
         ><a href="/azuria-releases/terms/">Terms of service</a
-        ><a href="https://github.com/jamesb123450/azuria-releases/issues">Report an issue</a>
+        ><a href="https://github.com/jamesb123450/azuria-releases/issues">Report an issue</a
+        ><button class="cookie-settings" type="button">Cookie settings</button>
       </div>
     </div>
     <div class="footer-bottom">
@@ -404,5 +430,5 @@
       </p>
     </details>
   </footer>
-      </body>
+      <section class="analytics-banner" aria-label="Analytics preferences" hidden><div><h2>Your privacy, your choice</h2><p>We store your requested preferences in this browser. Optional analytics is currently disabled. Read our <a href="/azuria-releases/privacy/">privacy policy</a>.</p></div><div class="analytics-actions"><button type="button" data-analytics-choice="rejected">Reject analytics</button><button type="button" data-analytics-choice="accepted">Accept analytics</button></div></section><p class="analytics-announcement" aria-live="polite"></p><script src="/azuria-releases/analytics.js" data-measurement-id="" data-consent-key="azuria-launcher.analytics.v2" defer></script></body>
     </html>

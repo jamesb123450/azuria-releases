@@ -136,7 +136,7 @@
       <div class="container changelog-layout">
         <aside class="changelog-aside">
           <span class="section-kicker">Latest release</span
-          ><strong data-latest-version>v0.2.199</strong
+          ><strong data-latest-version>v0.2.205</strong
           ><span data-latest-date>20 October 2026</span
           ><a class="text-link" href="/azuria-releases/downloads/"
             >Get the installer <svg
@@ -160,12 +160,112 @@
           <article class="release-entry">
                   <header>
                     <div>
+                      <h2>v0.2.205</h2>
+                      <time datetime="2026-10-20T18:14:34Z"
+                        >20 October 2026</time
+                      >
+                    </div>
+                    <span class="outline-badge">Latest</span>
+                  </header>
+                  <div class="release-notes"><h3>Profile content and Discover</h3><p>- Give profile pages a compact content tab bar and a clearer installed-content list. - Add an Update all review showing current and proposed versions before compatible updates install in sequence. - Refresh Discover with a compact toolbar, provider switching, clearer project rows and a visible installation target. - Keep the selected profile and content type when opening Discover or a project from a profile. </p></div>
+                  <a
+                    class="text-link"
+                    href="https://github.com/jamesb123450/azuria-releases/releases/tag/v0.2.205"
+                    >View on GitHub <svg
+    width="14"
+    height="14"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M14 4h6v6m0-6L10 14M10 4H4v16h16v-6"/>
+  </svg></a
+                  >
+                </article><article class="release-entry">
+                  <header>
+                    <div>
+                      <h2>v0.2.202</h2>
+                      <time datetime="2026-10-20T17:14:27Z"
+                        >20 October 2026</time
+                      >
+                    </div>
+                    
+                  </header>
+                  <div class="release-notes"><h3>Separate launcher frontend and native app</h3><ul>
+          <li>Keep the Vue interface and browser tests in their own workspace, separate from the native shell and installer.</li><li>Move Rust libraries into packages and update build hooks, release paths and CI without changing the Windows app identity or updater address.</li><li>Keep the existing window-close behaviour; system-tray support remains removed.</li>
+        </ul><h3>Restore normal launcher closure</h3><ul>
+          <li>Remove system-tray behaviour and the associated single-instance integration.</li><li>Closing Azuria exits when idle; keep the existing protection against closing during active games, preparation or unacknowledged storage migration.</li><li>Retain the Azuria Studios monorepo migration and other settings, privacy and installer changes.</li>
+        </ul><h3>Azuria Studios monorepo</h3><ul>
+          <li>Organise launcher, website and service source as separate workspaces with shared release tooling.</li><li>Preserve the Windows app identity, signing configuration, updater host and local data paths.</li><li>Resolve the bundled Inter font through its package so workspace installs retain the existing typography.</li>
+        </ul><h3>Reuse the running launcher</h3><ul>
+          <li>Keep one Azuria process running. Opening a desktop shortcut, Windows search result or executable restores and focuses the existing launcher, including when hidden in the system tray or minimised.</li><li>Prevent a second launcher from starting storage migration or competing for instance and account state.</li>
+        </ul><h3>Azuria Studios branding</h3><ul>
+          <li>Identify Azuria Studios as the developer and maintainer on the website, in setup and in the README.</li><li>Update the website terms and both privacy-policy copies to describe Azuria Studios as the project operator’s trading name.</li>
+        </ul><h3>First-install privacy and automatic updates</h3><ul>
+          <li>Keep automatic updates passive or silent without requesting privacy acceptance, including legacy installations without an acknowledgement record.</li><li>Require the offline privacy checkbox only on first installation; existing manual upgrades and reinstalls do not ask again when a prior acknowledgement or installed application is present.</li><li>Simplify the privacy policy around information, purposes, providers, retention and user rights. Remove setup implementation details and clarify that acknowledgement does not enable tracking.</li>
+        </ul><h3>Branded Windows setup and privacy acknowledgement</h3><ul>
+          <li>Add Azuria artwork, installer icons and clearer native welcome/finish pages to Windows setup.</li><li>Include an offline privacy policy with an unchecked mandatory acceptance box before installation can continue.</li><li>Record the accepted policy fingerprint locally only after successful installation. Require acknowledgement on first installation; reject a silent first installation without acknowledgement.</li><li>Preserve signed update packaging and upstream installation/uninstallation handling, with native Windows acceptance checks in CI.</li>
+        </ul><h3>Settings, privacy and desktop behaviour</h3><ul>
+          <li>Add functional privacy preferences, OLED appearance, a pinned version footer and readable settings rows. Save and Reset appear only for pending edits in a floating action bar.</li><li>Detect physical RAM for Minecraft allocation, including systems above 64 GiB. Limit concurrent asset downloads to a 1–10 slider, preserving older preferences with a reduced cap.</li><li>Show running instance names with Stop and Open logs actions, and display a startup loading screen while the library opens.</li><li>Keep the Windows launcher in the system tray when the window closes, retaining live game monitoring and safe explicit quitting.</li><li>Display measured storage in a segmented bar with a compact horizontal legend.</li><li>Move CurseForge API credentials out of app settings into a private, publisher-deployed Cloudflare Worker. Deployment and repository-secret setup are required before CurseForge is available in new builds.</li>
+        </ul><h3>Behaviour settings and Discord activity</h3><ul>
+          <li>Enable saved Behaviour preferences for minimising after Minecraft starts, refocusing after the last game closes, hiding the right sidebar and compact library defaults, with Save and Reset.</li><li>Add optional Windows Discord Rich Presence showing generic Playing Minecraft activity only while the game runs. Clear activity on exit or opt-out; missing Discord never blocks launching.</li><li>Document the public Discord Application ID build setting and disclose the limited activity data shared with Discord.</li>
+        </ul><h3>Consistent text fields</h3><ul>
+          <li>Theme text, password, numeric and multiline fields consistently across launcher popups, including storage preferences, provider keys and content installation.</li><li>Align Java and window settings with the shared field styling, with readable placeholders, disabled and read-only states, themed autofill and visible keyboard focus.</li><li>Preserve icon-led search layouts and give log search a clearer themed input frame.</li>
+        </ul><h3>Storage resources</h3><ul>
+          <li>Add real background storage measurements with per-instance categories, shared game files, runtimes, logs, screenshots, skins and trash. Hard-linked files are counted once.</li><li>Preview and confirm cleanup of abandoned staging downloads older than 24 hours, with stale-file checks and protection while Minecraft or content downloads are active.</li><li>Save or reset unused-download retention and Minecraft asset download concurrency in Settings → Storage. The retention limit applies when cleanup is run; worlds, installed content, shared files, runtimes and trash are kept.</li><li>Open the actual Azuria app directory directly from Storage settings.</li>
+        </ul><h3>Instance log console</h3><ul>
+          <li>Refine instance logs with a compact toolbar, search, severity filters and readable coloured output.</li><li>Add copy and export for visible lines, display-only clearing, wrapping and auto-scroll that pauses while reading older output.</li><li>Keep live polling and credential filtering, with accessible controls and light-theme colours.</li>
+        </ul><h3>Public release distribution</h3><ul>
+          <li>Move signed updates, downloads and the public website to azuria-releases so source access can be restricted without requiring users to authenticate.</li><li>Preserve release numbering, updater signatures and a temporary bridge for existing installations.</li>
+        </ul><h3>Changes</h3><ul>
+          <li>Kept additional content directly on the instance page with All/Mods/Resource packs filters, sorting, uploads, Discover browsing, selection actions and a compact project/version/actions table.</li><li>View content now opens a centred, searchable pack-content popup instead of replacing the additional-content list.</li><li>Added a version switcher with compatible provider version names, dates, Release/Beta/Alpha badges and on-demand changelogs. Selecting a version prepares a reviewed update or repair; no files change just by browsing versions.</li><li>Simplified instance and content actions with icon buttons, accessible names/tooltips and overflow menus.</li><li>Added an explicitly enabled website-only AdSense snippet slot at website/src/adsense.html, plus publisher setup and private-key storage instructions. Advertising remains off by default and is not loaded by the Windows launcher.</li>
+        </ul><ul>
+          <li>Added real project artwork and dedicated Description, Versions and Gallery pages using provider metadata, with sanitised rich descriptions and shared installation review.</li><li>Instance content shows recognised project icons and names. Modpack instances separate pack-managed files from additional content and show the installed pack version.</li><li>Added compatible stable update checks and missing-pack-file repair. Updates stage verified files, preserve edited configuration, worlds and added content, and back up replaced files. Interrupted publication restores backups; modified archives stop with a conflict.</li><li>Added batch Modrinth hash identification for local imports and pack files, plus provider metadata for managed CurseForge content. Vanilla instances no longer display or open a Mods section.</li><li>Refined install notifications with a compact, single-line Cancel install action.</li>
+        </ul><ul>
+          <li>Connected Discover to live Modrinth and CurseForge search for mods, modpacks, datapacks and resource packs, retaining the right-hand filter sidebar.</li><li>Added compatible version selection, a review step, required dependencies, cancellable downloads, hash verification and recovery of interrupted content installs. Different existing files are preserved on conflict.</li><li>Modpacks create new Vanilla/Fabric instances and prepare game files without launching Minecraft. Datapacks install into a selected existing world. Unsupported loaders, external Modrinth pack hosts and restricted provider downloads report clear errors.</li><li>Added CurseForge API key setup under Settings → Content providers with shared Save/Reset controls and native Windows Credential Manager storage. Approved CurseForge API access is required; Modrinth needs no key.</li>
+        </ul><ul>
+          <li>Fixed Fabric Stable/Latest selections being sent as literal version strings. New instances save concrete versions; existing preferences resolve and pin on the next preparation attempt.</li><li>Added support for Minecraft 26.1 Fabric profiles, which no longer include intermediary mappings. Older Minecraft profiles retain mapping validation.</li><li>Creating a Vanilla or Fabric instance now downloads and verifies the required game files, libraries, assets and Java without opening Minecraft or requiring sign-in. Play reuses those files and verifies the account only before starting the game.</li><li>Added download progress, Stop, Resume/Retry download and a ready state. Failed or cancelled downloads retain the instance and verified cache for retry.</li>
+        </ul><ul>
+          <li>Added Windows Fabric launching using the selected Minecraft and pinned Fabric loader version. Quilt, Forge and NeoForge remain coming soon.</li><li>Fabric preparation merges official loader libraries and arguments with Mojang game metadata, verifies library checksums, and caches profiles by version pair. Existing Java/memory overrides, account verification, live logs and Play/Stop controls are reused.</li><li>Cancelling preparation preserves verified downloads for retry. Changing the loader version prepares a separate profile without removing instance content. Fabric API and mods are installed separately.</li>
+        </ul><ul>
+          <li>Replaced the settings page with a centred, category-based popup that keeps your current screen behind it.</li><li>Added a fixed Save/Reset footer, shared pending edits across categories, validation and an unsaved-change prompt. Reset restores the last saved values.</li><li>Reorganised appearance, account, Java/memory, window, storage and update settings. Planned features are clearly labelled Coming soon.</li>
+        </ul><ul>
+          <li>Rebuilt the skin selector around a large rotatable character preview and saved-skin cards, retaining Azuria’s current colours and interface.</li><li>Added local skin saving, PNG picking and drag-and-drop, hover/keyboard Edit and Remove actions, and an editor with Classic/Slim arms and owned cape selection.</li><li>Saved skins remain under `%APPDATA%\AzuriaLauncher\skins`, with bounded storage and a recovery backup. Saving locally and applying to the Minecraft account are separate actions.</li><li>Skin/cape application refreshes account appearance after partial service failures and reports what needs retrying.</li>
+        </ul><ul>
+          <li>Matched the instance Screenshots link to the other section controls, including its camera icon.</li><li>Fixed sidebar selection so Library and individual instances highlight only on their own pages.</li><li>Added a square advertisement placeholder anchored within the bottom-right Library sidebar. It contains no advertising scripts or network requests.</li><li>Replaced cape texture sheets with angled previews of the actual cape faces and edges.</li>
+        </ul><ul>
+          <li>Added a Minecraft skin and cape manager: preview your skin, upload Classic/Slim PNGs, reset it, and equip or hide owned capes.</li><li>Show the signed-in player’s skin head in the account sidebar and navigation.</li><li>Added a screenshot gallery with instance filtering, full previews, PNG export, folder access and recoverable removal to Azuria’s trash.</li><li>Instance Logs refresh every second, with log selection, pause and follow-output controls.</li><li>Play becomes Stop as soon as preparation starts. Stop cancels preparation or terminates the owned Minecraft process; stopping a running game warns about unsaved changes.</li><li>Simplified launch feedback while retaining actionable errors and crash details.</li>
+        </ul><p>No storage migration is required. Cosmetics require a verified Minecraft Java account and Minecraft Services access. Skin/cape changes and real gameplay must be checked with an owned account on Windows; automated interface tests use mocked native responses. </p></div>
+                  <a
+                    class="text-link"
+                    href="https://github.com/jamesb123450/azuria-releases/releases/tag/v0.2.202"
+                    >View on GitHub <svg
+    width="14"
+    height="14"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M14 4h6v6m0-6L10 14M10 4H4v16h16v-6"/>
+  </svg></a
+                  >
+                </article><article class="release-entry">
+                  <header>
+                    <div>
                       <h2>v0.2.199</h2>
                       <time datetime="2026-10-20T12:04:14Z"
                         >20 October 2026</time
                       >
                     </div>
-                    <span class="outline-badge">Latest</span>
+                    
                   </header>
                   <div class="release-notes"><h3>Separate launcher frontend and native app</h3><ul>
           <li>Keep the Vue interface and browser tests in their own workspace, separate from the native shell and installer.</li><li>Move Rust libraries into packages and update build hooks, release paths and CI without changing the Windows app identity or updater address.</li><li>Keep the existing window-close behaviour; system-tray support remains removed.</li>
@@ -445,150 +545,6 @@
     <path d="M14 4h6v6m0-6L10 14M10 4H4v16h16v-6"/>
   </svg></a
                   >
-                </article><article class="release-entry">
-                  <header>
-                    <div>
-                      <h2>v0.2.187</h2>
-                      <time datetime="2026-10-19T21:55:12Z"
-                        >19 October 2026</time
-                      >
-                    </div>
-                    
-                  </header>
-                  <div class="release-notes"><h3>Separate launcher frontend and native app</h3><ul>
-          <li>Keep the Vue interface and browser tests in their own workspace, separate from the native shell and installer.</li><li>Move Rust libraries into packages and update build hooks, release paths and CI without changing the Windows app identity or updater address.</li><li>Keep the existing window-close behaviour; system-tray support remains removed.</li>
-        </ul><h3>Restore normal launcher closure</h3><ul>
-          <li>Remove system-tray behaviour and the associated single-instance integration.</li><li>Closing Azuria exits when idle; keep the existing protection against closing during active games, preparation or unacknowledged storage migration.</li><li>Retain the Azuria Studios monorepo migration and other settings, privacy and installer changes.</li>
-        </ul><h3>Azuria Studios monorepo</h3><ul>
-          <li>Organise launcher, website and service source as separate workspaces with shared release tooling.</li><li>Preserve the Windows app identity, signing configuration, updater host and local data paths.</li><li>Resolve the bundled Inter font through its package so workspace installs retain the existing typography.</li>
-        </ul><h3>Reuse the running launcher</h3><ul>
-          <li>Keep one Azuria process running. Opening a desktop shortcut, Windows search result or executable restores and focuses the existing launcher, including when hidden in the system tray or minimised.</li><li>Prevent a second launcher from starting storage migration or competing for instance and account state.</li>
-        </ul><h3>Azuria Studios branding</h3><ul>
-          <li>Identify Azuria Studios as the developer and maintainer on the website, in setup and in the README.</li><li>Update the website terms and both privacy-policy copies to describe Azuria Studios as the project operator’s trading name.</li>
-        </ul><h3>First-install privacy and automatic updates</h3><ul>
-          <li>Keep automatic updates passive or silent without requesting privacy acceptance, including legacy installations without an acknowledgement record.</li><li>Require the offline privacy checkbox only on first installation; existing manual upgrades and reinstalls do not ask again when a prior acknowledgement or installed application is present.</li><li>Simplify the privacy policy around information, purposes, providers, retention and user rights. Remove setup implementation details and clarify that acknowledgement does not enable tracking.</li>
-        </ul><h3>Branded Windows setup and privacy acknowledgement</h3><ul>
-          <li>Add Azuria artwork, installer icons and clearer native welcome/finish pages to Windows setup.</li><li>Include an offline privacy policy with an unchecked mandatory acceptance box before installation can continue.</li><li>Record the accepted policy fingerprint locally only after successful installation. Require acknowledgement on first installation; reject a silent first installation without acknowledgement.</li><li>Preserve signed update packaging and upstream installation/uninstallation handling, with native Windows acceptance checks in CI.</li>
-        </ul><h3>Settings, privacy and desktop behaviour</h3><ul>
-          <li>Add functional privacy preferences, OLED appearance, a pinned version footer and readable settings rows. Save and Reset appear only for pending edits in a floating action bar.</li><li>Detect physical RAM for Minecraft allocation, including systems above 64 GiB. Limit concurrent asset downloads to a 1–10 slider, preserving older preferences with a reduced cap.</li><li>Show running instance names with Stop and Open logs actions, and display a startup loading screen while the library opens.</li><li>Keep the Windows launcher in the system tray when the window closes, retaining live game monitoring and safe explicit quitting.</li><li>Display measured storage in a segmented bar with a compact horizontal legend.</li><li>Move CurseForge API credentials out of app settings into a private, publisher-deployed Cloudflare Worker. Deployment and repository-secret setup are required before CurseForge is available in new builds.</li>
-        </ul><h3>Behaviour settings and Discord activity</h3><ul>
-          <li>Enable saved Behaviour preferences for minimising after Minecraft starts, refocusing after the last game closes, hiding the right sidebar and compact library defaults, with Save and Reset.</li><li>Add optional Windows Discord Rich Presence showing generic Playing Minecraft activity only while the game runs. Clear activity on exit or opt-out; missing Discord never blocks launching.</li><li>Document the public Discord Application ID build setting and disclose the limited activity data shared with Discord.</li>
-        </ul><h3>Consistent text fields</h3><ul>
-          <li>Theme text, password, numeric and multiline fields consistently across launcher popups, including storage preferences, provider keys and content installation.</li><li>Align Java and window settings with the shared field styling, with readable placeholders, disabled and read-only states, themed autofill and visible keyboard focus.</li><li>Preserve icon-led search layouts and give log search a clearer themed input frame.</li>
-        </ul><h3>Storage resources</h3><ul>
-          <li>Add real background storage measurements with per-instance categories, shared game files, runtimes, logs, screenshots, skins and trash. Hard-linked files are counted once.</li><li>Preview and confirm cleanup of abandoned staging downloads older than 24 hours, with stale-file checks and protection while Minecraft or content downloads are active.</li><li>Save or reset unused-download retention and Minecraft asset download concurrency in Settings → Storage. The retention limit applies when cleanup is run; worlds, installed content, shared files, runtimes and trash are kept.</li><li>Open the actual Azuria app directory directly from Storage settings.</li>
-        </ul><h3>Instance log console</h3><ul>
-          <li>Refine instance logs with a compact toolbar, search, severity filters and readable coloured output.</li><li>Add copy and export for visible lines, display-only clearing, wrapping and auto-scroll that pauses while reading older output.</li><li>Keep live polling and credential filtering, with accessible controls and light-theme colours.</li>
-        </ul><h3>Public release distribution</h3><ul>
-          <li>Move signed updates, downloads and the public website to azuria-releases so source access can be restricted without requiring users to authenticate.</li><li>Preserve release numbering, updater signatures and a temporary bridge for existing installations.</li>
-        </ul><h3>Changes</h3><ul>
-          <li>Kept additional content directly on the instance page with All/Mods/Resource packs filters, sorting, uploads, Discover browsing, selection actions and a compact project/version/actions table.</li><li>View content now opens a centred, searchable pack-content popup instead of replacing the additional-content list.</li><li>Added a version switcher with compatible provider version names, dates, Release/Beta/Alpha badges and on-demand changelogs. Selecting a version prepares a reviewed update or repair; no files change just by browsing versions.</li><li>Simplified instance and content actions with icon buttons, accessible names/tooltips and overflow menus.</li><li>Added an explicitly enabled website-only AdSense snippet slot at website/src/adsense.html, plus publisher setup and private-key storage instructions. Advertising remains off by default and is not loaded by the Windows launcher.</li>
-        </ul><ul>
-          <li>Added real project artwork and dedicated Description, Versions and Gallery pages using provider metadata, with sanitised rich descriptions and shared installation review.</li><li>Instance content shows recognised project icons and names. Modpack instances separate pack-managed files from additional content and show the installed pack version.</li><li>Added compatible stable update checks and missing-pack-file repair. Updates stage verified files, preserve edited configuration, worlds and added content, and back up replaced files. Interrupted publication restores backups; modified archives stop with a conflict.</li><li>Added batch Modrinth hash identification for local imports and pack files, plus provider metadata for managed CurseForge content. Vanilla instances no longer display or open a Mods section.</li><li>Refined install notifications with a compact, single-line Cancel install action.</li>
-        </ul><ul>
-          <li>Connected Discover to live Modrinth and CurseForge search for mods, modpacks, datapacks and resource packs, retaining the right-hand filter sidebar.</li><li>Added compatible version selection, a review step, required dependencies, cancellable downloads, hash verification and recovery of interrupted content installs. Different existing files are preserved on conflict.</li><li>Modpacks create new Vanilla/Fabric instances and prepare game files without launching Minecraft. Datapacks install into a selected existing world. Unsupported loaders, external Modrinth pack hosts and restricted provider downloads report clear errors.</li><li>Added CurseForge API key setup under Settings → Content providers with shared Save/Reset controls and native Windows Credential Manager storage. Approved CurseForge API access is required; Modrinth needs no key.</li>
-        </ul><ul>
-          <li>Fixed Fabric Stable/Latest selections being sent as literal version strings. New instances save concrete versions; existing preferences resolve and pin on the next preparation attempt.</li><li>Added support for Minecraft 26.1 Fabric profiles, which no longer include intermediary mappings. Older Minecraft profiles retain mapping validation.</li><li>Creating a Vanilla or Fabric instance now downloads and verifies the required game files, libraries, assets and Java without opening Minecraft or requiring sign-in. Play reuses those files and verifies the account only before starting the game.</li><li>Added download progress, Stop, Resume/Retry download and a ready state. Failed or cancelled downloads retain the instance and verified cache for retry.</li>
-        </ul><ul>
-          <li>Added Windows Fabric launching using the selected Minecraft and pinned Fabric loader version. Quilt, Forge and NeoForge remain coming soon.</li><li>Fabric preparation merges official loader libraries and arguments with Mojang game metadata, verifies library checksums, and caches profiles by version pair. Existing Java/memory overrides, account verification, live logs and Play/Stop controls are reused.</li><li>Cancelling preparation preserves verified downloads for retry. Changing the loader version prepares a separate profile without removing instance content. Fabric API and mods are installed separately.</li>
-        </ul><ul>
-          <li>Replaced the settings page with a centred, category-based popup that keeps your current screen behind it.</li><li>Added a fixed Save/Reset footer, shared pending edits across categories, validation and an unsaved-change prompt. Reset restores the last saved values.</li><li>Reorganised appearance, account, Java/memory, window, storage and update settings. Planned features are clearly labelled Coming soon.</li>
-        </ul><ul>
-          <li>Rebuilt the skin selector around a large rotatable character preview and saved-skin cards, retaining Azuria’s current colours and interface.</li><li>Added local skin saving, PNG picking and drag-and-drop, hover/keyboard Edit and Remove actions, and an editor with Classic/Slim arms and owned cape selection.</li><li>Saved skins remain under `%APPDATA%\AzuriaLauncher\skins`, with bounded storage and a recovery backup. Saving locally and applying to the Minecraft account are separate actions.</li><li>Skin/cape application refreshes account appearance after partial service failures and reports what needs retrying.</li>
-        </ul><ul>
-          <li>Matched the instance Screenshots link to the other section controls, including its camera icon.</li><li>Fixed sidebar selection so Library and individual instances highlight only on their own pages.</li><li>Added a square advertisement placeholder anchored within the bottom-right Library sidebar. It contains no advertising scripts or network requests.</li><li>Replaced cape texture sheets with angled previews of the actual cape faces and edges.</li>
-        </ul><ul>
-          <li>Added a Minecraft skin and cape manager: preview your skin, upload Classic/Slim PNGs, reset it, and equip or hide owned capes.</li><li>Show the signed-in player’s skin head in the account sidebar and navigation.</li><li>Added a screenshot gallery with instance filtering, full previews, PNG export, folder access and recoverable removal to Azuria’s trash.</li><li>Instance Logs refresh every second, with log selection, pause and follow-output controls.</li><li>Play becomes Stop as soon as preparation starts. Stop cancels preparation or terminates the owned Minecraft process; stopping a running game warns about unsaved changes.</li><li>Simplified launch feedback while retaining actionable errors and crash details.</li>
-        </ul><p>No storage migration is required. Cosmetics require a verified Minecraft Java account and Minecraft Services access. Skin/cape changes and real gameplay must be checked with an owned account on Windows; automated interface tests use mocked native responses. </p></div>
-                  <a
-                    class="text-link"
-                    href="https://github.com/jamesb123450/azuria-releases/releases/tag/v0.2.187"
-                    >View on GitHub <svg
-    width="14"
-    height="14"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="1.6"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    aria-hidden="true"
-  >
-    <path d="M14 4h6v6m0-6L10 14M10 4H4v16h16v-6"/>
-  </svg></a
-                  >
-                </article><article class="release-entry">
-                  <header>
-                    <div>
-                      <h2>v0.2.185</h2>
-                      <time datetime="2026-10-19T21:34:42Z"
-                        >19 October 2026</time
-                      >
-                    </div>
-                    
-                  </header>
-                  <div class="release-notes"><h3>Separate launcher frontend and native app</h3><ul>
-          <li>Keep the Vue interface and browser tests in their own workspace, separate from the native shell and installer.</li><li>Move Rust libraries into packages and update build hooks, release paths and CI without changing the Windows app identity or updater address.</li><li>Keep the existing window-close behaviour; system-tray support remains removed.</li>
-        </ul><h3>Restore normal launcher closure</h3><ul>
-          <li>Remove system-tray behaviour and the associated single-instance integration.</li><li>Closing Azuria exits when idle; keep the existing protection against closing during active games, preparation or unacknowledged storage migration.</li><li>Retain the Azuria Studios monorepo migration and other settings, privacy and installer changes.</li>
-        </ul><h3>Azuria Studios monorepo</h3><ul>
-          <li>Organise launcher, website and service source as separate workspaces with shared release tooling.</li><li>Preserve the Windows app identity, signing configuration, updater host and local data paths.</li><li>Resolve the bundled Inter font through its package so workspace installs retain the existing typography.</li>
-        </ul><h3>Reuse the running launcher</h3><ul>
-          <li>Keep one Azuria process running. Opening a desktop shortcut, Windows search result or executable restores and focuses the existing launcher, including when hidden in the system tray or minimised.</li><li>Prevent a second launcher from starting storage migration or competing for instance and account state.</li>
-        </ul><h3>Azuria Studios branding</h3><ul>
-          <li>Identify Azuria Studios as the developer and maintainer on the website, in setup and in the README.</li><li>Update the website terms and both privacy-policy copies to describe Azuria Studios as the project operator’s trading name.</li>
-        </ul><h3>First-install privacy and automatic updates</h3><ul>
-          <li>Keep automatic updates passive or silent without requesting privacy acceptance, including legacy installations without an acknowledgement record.</li><li>Require the offline privacy checkbox only on first installation; existing manual upgrades and reinstalls do not ask again when a prior acknowledgement or installed application is present.</li><li>Simplify the privacy policy around information, purposes, providers, retention and user rights. Remove setup implementation details and clarify that acknowledgement does not enable tracking.</li>
-        </ul><h3>Branded Windows setup and privacy acknowledgement</h3><ul>
-          <li>Add Azuria artwork, installer icons and clearer native welcome/finish pages to Windows setup.</li><li>Include an offline privacy policy with an unchecked mandatory acceptance box before installation can continue.</li><li>Record the accepted policy fingerprint locally only after successful installation. Require acknowledgement on first installation; reject a silent first installation without acknowledgement.</li><li>Preserve signed update packaging and upstream installation/uninstallation handling, with native Windows acceptance checks in CI.</li>
-        </ul><h3>Settings, privacy and desktop behaviour</h3><ul>
-          <li>Add functional privacy preferences, OLED appearance, a pinned version footer and readable settings rows. Save and Reset appear only for pending edits in a floating action bar.</li><li>Detect physical RAM for Minecraft allocation, including systems above 64 GiB. Limit concurrent asset downloads to a 1–10 slider, preserving older preferences with a reduced cap.</li><li>Show running instance names with Stop and Open logs actions, and display a startup loading screen while the library opens.</li><li>Keep the Windows launcher in the system tray when the window closes, retaining live game monitoring and safe explicit quitting.</li><li>Display measured storage in a segmented bar with a compact horizontal legend.</li><li>Move CurseForge API credentials out of app settings into a private, publisher-deployed Cloudflare Worker. Deployment and repository-secret setup are required before CurseForge is available in new builds.</li>
-        </ul><h3>Behaviour settings and Discord activity</h3><ul>
-          <li>Enable saved Behaviour preferences for minimising after Minecraft starts, refocusing after the last game closes, hiding the right sidebar and compact library defaults, with Save and Reset.</li><li>Add optional Windows Discord Rich Presence showing generic Playing Minecraft activity only while the game runs. Clear activity on exit or opt-out; missing Discord never blocks launching.</li><li>Document the public Discord Application ID build setting and disclose the limited activity data shared with Discord.</li>
-        </ul><h3>Consistent text fields</h3><ul>
-          <li>Theme text, password, numeric and multiline fields consistently across launcher popups, including storage preferences, provider keys and content installation.</li><li>Align Java and window settings with the shared field styling, with readable placeholders, disabled and read-only states, themed autofill and visible keyboard focus.</li><li>Preserve icon-led search layouts and give log search a clearer themed input frame.</li>
-        </ul><h3>Storage resources</h3><ul>
-          <li>Add real background storage measurements with per-instance categories, shared game files, runtimes, logs, screenshots, skins and trash. Hard-linked files are counted once.</li><li>Preview and confirm cleanup of abandoned staging downloads older than 24 hours, with stale-file checks and protection while Minecraft or content downloads are active.</li><li>Save or reset unused-download retention and Minecraft asset download concurrency in Settings → Storage. The retention limit applies when cleanup is run; worlds, installed content, shared files, runtimes and trash are kept.</li><li>Open the actual Azuria app directory directly from Storage settings.</li>
-        </ul><h3>Instance log console</h3><ul>
-          <li>Refine instance logs with a compact toolbar, search, severity filters and readable coloured output.</li><li>Add copy and export for visible lines, display-only clearing, wrapping and auto-scroll that pauses while reading older output.</li><li>Keep live polling and credential filtering, with accessible controls and light-theme colours.</li>
-        </ul><h3>Public release distribution</h3><ul>
-          <li>Move signed updates, downloads and the public website to azuria-releases so source access can be restricted without requiring users to authenticate.</li><li>Preserve release numbering, updater signatures and a temporary bridge for existing installations.</li>
-        </ul><h3>Changes</h3><ul>
-          <li>Kept additional content directly on the instance page with All/Mods/Resource packs filters, sorting, uploads, Discover browsing, selection actions and a compact project/version/actions table.</li><li>View content now opens a centred, searchable pack-content popup instead of replacing the additional-content list.</li><li>Added a version switcher with compatible provider version names, dates, Release/Beta/Alpha badges and on-demand changelogs. Selecting a version prepares a reviewed update or repair; no files change just by browsing versions.</li><li>Simplified instance and content actions with icon buttons, accessible names/tooltips and overflow menus.</li><li>Added an explicitly enabled website-only AdSense snippet slot at website/src/adsense.html, plus publisher setup and private-key storage instructions. Advertising remains off by default and is not loaded by the Windows launcher.</li>
-        </ul><ul>
-          <li>Added real project artwork and dedicated Description, Versions and Gallery pages using provider metadata, with sanitised rich descriptions and shared installation review.</li><li>Instance content shows recognised project icons and names. Modpack instances separate pack-managed files from additional content and show the installed pack version.</li><li>Added compatible stable update checks and missing-pack-file repair. Updates stage verified files, preserve edited configuration, worlds and added content, and back up replaced files. Interrupted publication restores backups; modified archives stop with a conflict.</li><li>Added batch Modrinth hash identification for local imports and pack files, plus provider metadata for managed CurseForge content. Vanilla instances no longer display or open a Mods section.</li><li>Refined install notifications with a compact, single-line Cancel install action.</li>
-        </ul><ul>
-          <li>Connected Discover to live Modrinth and CurseForge search for mods, modpacks, datapacks and resource packs, retaining the right-hand filter sidebar.</li><li>Added compatible version selection, a review step, required dependencies, cancellable downloads, hash verification and recovery of interrupted content installs. Different existing files are preserved on conflict.</li><li>Modpacks create new Vanilla/Fabric instances and prepare game files without launching Minecraft. Datapacks install into a selected existing world. Unsupported loaders, external Modrinth pack hosts and restricted provider downloads report clear errors.</li><li>Added CurseForge API key setup under Settings → Content providers with shared Save/Reset controls and native Windows Credential Manager storage. Approved CurseForge API access is required; Modrinth needs no key.</li>
-        </ul><ul>
-          <li>Fixed Fabric Stable/Latest selections being sent as literal version strings. New instances save concrete versions; existing preferences resolve and pin on the next preparation attempt.</li><li>Added support for Minecraft 26.1 Fabric profiles, which no longer include intermediary mappings. Older Minecraft profiles retain mapping validation.</li><li>Creating a Vanilla or Fabric instance now downloads and verifies the required game files, libraries, assets and Java without opening Minecraft or requiring sign-in. Play reuses those files and verifies the account only before starting the game.</li><li>Added download progress, Stop, Resume/Retry download and a ready state. Failed or cancelled downloads retain the instance and verified cache for retry.</li>
-        </ul><ul>
-          <li>Added Windows Fabric launching using the selected Minecraft and pinned Fabric loader version. Quilt, Forge and NeoForge remain coming soon.</li><li>Fabric preparation merges official loader libraries and arguments with Mojang game metadata, verifies library checksums, and caches profiles by version pair. Existing Java/memory overrides, account verification, live logs and Play/Stop controls are reused.</li><li>Cancelling preparation preserves verified downloads for retry. Changing the loader version prepares a separate profile without removing instance content. Fabric API and mods are installed separately.</li>
-        </ul><ul>
-          <li>Replaced the settings page with a centred, category-based popup that keeps your current screen behind it.</li><li>Added a fixed Save/Reset footer, shared pending edits across categories, validation and an unsaved-change prompt. Reset restores the last saved values.</li><li>Reorganised appearance, account, Java/memory, window, storage and update settings. Planned features are clearly labelled Coming soon.</li>
-        </ul><ul>
-          <li>Rebuilt the skin selector around a large rotatable character preview and saved-skin cards, retaining Azuria’s current colours and interface.</li><li>Added local skin saving, PNG picking and drag-and-drop, hover/keyboard Edit and Remove actions, and an editor with Classic/Slim arms and owned cape selection.</li><li>Saved skins remain under `%APPDATA%\AzuriaLauncher\skins`, with bounded storage and a recovery backup. Saving locally and applying to the Minecraft account are separate actions.</li><li>Skin/cape application refreshes account appearance after partial service failures and reports what needs retrying.</li>
-        </ul><ul>
-          <li>Matched the instance Screenshots link to the other section controls, including its camera icon.</li><li>Fixed sidebar selection so Library and individual instances highlight only on their own pages.</li><li>Added a square advertisement placeholder anchored within the bottom-right Library sidebar. It contains no advertising scripts or network requests.</li><li>Replaced cape texture sheets with angled previews of the actual cape faces and edges.</li>
-        </ul><ul>
-          <li>Added a Minecraft skin and cape manager: preview your skin, upload Classic/Slim PNGs, reset it, and equip or hide owned capes.</li><li>Show the signed-in player’s skin head in the account sidebar and navigation.</li><li>Added a screenshot gallery with instance filtering, full previews, PNG export, folder access and recoverable removal to Azuria’s trash.</li><li>Instance Logs refresh every second, with log selection, pause and follow-output controls.</li><li>Play becomes Stop as soon as preparation starts. Stop cancels preparation or terminates the owned Minecraft process; stopping a running game warns about unsaved changes.</li><li>Simplified launch feedback while retaining actionable errors and crash details.</li>
-        </ul><p>No storage migration is required. Cosmetics require a verified Minecraft Java account and Minecraft Services access. Skin/cape changes and real gameplay must be checked with an owned account on Windows; automated interface tests use mocked native responses. </p></div>
-                  <a
-                    class="text-link"
-                    href="https://github.com/jamesb123450/azuria-releases/releases/tag/v0.2.185"
-                    >View on GitHub <svg
-    width="14"
-    height="14"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="1.6"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    aria-hidden="true"
-  >
-    <path d="M14 4h6v6m0-6L10 14M10 4H4v16h16v-6"/>
-  </svg></a
-                  >
                 </article>
         </section>
       </div> 
@@ -596,11 +552,11 @@
             class="latest-notice container"
             aria-label="Latest Azuria release"
             data-latest-notice
-            data-built-tag="v0.2.199"
+            data-built-tag="v0.2.205"
           >
             <div>
               <span class="section-kicker">Latest release</span
-              ><strong data-latest-version>v0.2.199</strong
+              ><strong data-latest-version>v0.2.205</strong
               ><span data-latest-date>20 October 2026</span>
               <p data-release-status aria-live="polite">
                 Release information from the last successful build. GitHub

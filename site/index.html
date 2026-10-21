@@ -9,7 +9,7 @@
         <meta name="color-scheme" content="dark" />
         <meta
           http-equiv="Content-Security-Policy"
-          content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src https://api.github.com; object-src 'none'; base-uri 'none'; form-action 'none'"
+          content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://*.supabase.co; font-src 'self'; connect-src 'self' https://*.supabase.co https://api.github.com; object-src 'none'; base-uri 'none'; form-action 'none'"
         />
         <link rel="canonical" href="https://jamesb123450.github.io/azuria-releases/" />
         <meta property="og:type" content="website" />
@@ -37,8 +37,10 @@
         />
         <link rel="stylesheet" href="/azuria-releases/site.css" />
         <link rel="stylesheet" href="/azuria-releases/premium.css" />
+        <link rel="stylesheet" href="/azuria-releases/news.css" />
         <link rel="stylesheet" href="/azuria-releases/analytics.css" />
         <script type="module" src="/azuria-releases/site.js"></script>
+        <script type="module" src="/azuria-releases/news.js"></script>
       </head>
       <body class="home-page">
         <a class="skip-link" href="#main">Skip to content</a>
@@ -75,6 +77,10 @@
         <nav id="site-navigation" aria-label="Main navigation">
           <a class="section-nav" href="#features">Launcher</a><a class="section-nav" href="#appearance">Appearance</a><a class="section-nav" href="#updates">Updates</a>
           <a
+      href="/azuria-releases/news/"
+      
+      >News</a
+    ><a
       href="/azuria-releases/help/"
       
       >Help</a
@@ -672,7 +678,19 @@
         </p>
       </div>
     </section>
-  </div> 
+  </div><section
+      class="news-section container"
+      aria-labelledby="news-heading"
+    >
+      <div class="news-section-heading">
+        <div>
+          <span class="section-kicker">FROM THE STUDIO</span>
+          <h2 id="news-heading">Latest from Azuria</h2>
+        </div>
+        <a class="text-link" href="/azuria-releases/news/">All news →</a>
+      </div>
+      <div data-news-feed="home"><p role="status">Loading news…</p></div>
+    </section> 
           <aside
             class="latest-notice container"
             aria-label="Latest Azuria release"

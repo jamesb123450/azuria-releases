@@ -9,7 +9,7 @@
         <meta name="color-scheme" content="dark" />
         <meta
           http-equiv="Content-Security-Policy"
-          content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src https://api.github.com; object-src 'none'; base-uri 'none'; form-action 'none'"
+          content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://*.supabase.co; font-src 'self'; connect-src 'self' https://*.supabase.co https://api.github.com; object-src 'none'; base-uri 'none'; form-action 'none'"
         />
         <link rel="canonical" href="https://jamesb123450.github.io/azuria-releases/downloads/" />
         <meta property="og:type" content="website" />
@@ -37,8 +37,10 @@
         />
         <link rel="stylesheet" href="/azuria-releases/site.css" />
         <link rel="stylesheet" href="/azuria-releases/premium.css" />
+        <link rel="stylesheet" href="/azuria-releases/news.css" />
         <link rel="stylesheet" href="/azuria-releases/analytics.css" />
         <script type="module" src="/azuria-releases/site.js"></script>
+        <script type="module" src="/azuria-releases/news.js"></script>
       </head>
       <body class="inner-page">
         <a class="skip-link" href="#main">Skip to content</a>
@@ -83,6 +85,10 @@
       >Changelog</a
     >
           <a
+      href="/azuria-releases/news/"
+      
+      >News</a
+    ><a
       href="/azuria-releases/help/"
       
       >Help</a

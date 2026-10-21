@@ -9,7 +9,7 @@
         <meta name="color-scheme" content="dark" />
         <meta
           http-equiv="Content-Security-Policy"
-          content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src https://api.github.com; object-src 'none'; base-uri 'none'; form-action 'none'"
+          content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://*.supabase.co; font-src 'self'; connect-src 'self' https://*.supabase.co https://api.github.com; object-src 'none'; base-uri 'none'; form-action 'none'"
         />
         <link rel="canonical" href="https://jamesb123450.github.io/azuria-releases/privacy/" />
         <meta property="og:type" content="website" />
@@ -37,8 +37,10 @@
         />
         <link rel="stylesheet" href="/azuria-releases/site.css" />
         <link rel="stylesheet" href="/azuria-releases/premium.css" />
+        <link rel="stylesheet" href="/azuria-releases/news.css" />
         <link rel="stylesheet" href="/azuria-releases/analytics.css" />
         <script type="module" src="/azuria-releases/site.js"></script>
+        <script type="module" src="/azuria-releases/news.js"></script>
       </head>
       <body class="inner-page">
         <a class="skip-link" href="#main">Skip to content</a>
@@ -83,6 +85,10 @@
       >Changelog</a
     >
           <a
+      href="/azuria-releases/news/"
+      
+      >News</a
+    ><a
       href="/azuria-releases/help/"
       
       >Help</a
@@ -217,11 +223,14 @@
               details or launcher data to website analytics.
             </p>
             <p>
-              This website does not provide user accounts. Fonts and images are
-              hosted with the website. Hosting and download providers process
-              technical request information, including IP addresses, browser
-              details and requested pages, to deliver and protect their
-              services. The main website uses
+              This website does not provide user accounts. Fonts and interface
+              images are hosted with the website. News articles and their cover
+              images are served through Supabase, which receives technical
+              request information to deliver that content. Admin usernames and
+              publication dates are shown publicly with their stories. Hosting
+              and download providers process technical request information,
+              including IP addresses, browser details and requested pages, to
+              deliver and protect their services. The main website uses
               <a href="https://vercel.com/legal/privacy-notice">Vercel</a>;
               copies served through GitHub Pages and downloads use
               <a

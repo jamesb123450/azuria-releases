@@ -202,14 +202,18 @@
             </p>
             <p>
               <strong>Azuria friends and messages.</strong> We store your friend
-              connections, blocks, message text, sender and recipient account
-              IDs, send times and read times in Supabase to provide private
-              conversations between accepted friends. Messages are not
-              end-to-end encrypted; authorised database operators can access
-              them. Removing or blocking a friend stops conversation access;
-              adding them again restores its history. Messages remain until an
-              account involved is deleted or you ask us to delete the data. We
-              do not share your email with friends.
+              connections, blocks, encrypted message contents, public encryption
+              keys, sender and recipient account IDs, send times and read times
+              in Supabase. New messages are end-to-end encrypted in the
+              launcher. Private keys stay in Windows Credential Manager.
+              Recovery files are encrypted with a separate passphrase and saved
+              where you choose. Older messages sent before encryption remain
+              unencrypted and are labelled in the app. We cannot recover
+              encrypted messages if you lose your key and its recovery file.
+              Removing or blocking a friend stops conversation access; adding
+              them again restores its history. Messages remain until an account
+              involved is deleted or you ask us to delete the data. We do not
+              share your email with friends.
             </p>
             <p>
               <strong>Support.</strong> If you contact the project, we receive

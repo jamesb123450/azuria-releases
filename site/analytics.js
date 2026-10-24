@@ -94,7 +94,7 @@
     button.addEventListener("click", () => {
       returnFocus = button;
       banner.hidden = false;
-      banner.querySelector("button").focus();
+      banner.querySelector("button").focus({ preventScroll: true });
     }),
   );
   banner.querySelectorAll("[data-analytics-choice]").forEach((button) =>
@@ -109,7 +109,8 @@
         /* Consent works for this page even when storage is blocked. */
       }
       banner.hidden = true;
-      (returnFocus || document.querySelector(".cookie-settings"))?.focus();
+      returnFocus?.focus({ preventScroll: true });
+      returnFocus = undefined;
       document.querySelector(".analytics-announcement").textContent =
         "Your analytics preferences have been saved.";
       if (choice === "accepted") enable();

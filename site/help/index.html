@@ -157,7 +157,8 @@
         <nav class="help-navigation" aria-label="Help topics">
           <a href="#status">Current capabilities</a
           ><a href="#installation">Installation</a><a href="#updates">Updates</a
-          ><a href="#accounts">Microsoft sign-in</a
+          ><a href="#accounts">Accounts & sign-in</a
+          ><a href="#social">Friends & messaging</a
           ><a href="#privacy">Privacy & storage</a
           ><a href="#support">Get help</a>
         </nav>
@@ -184,7 +185,7 @@
                   <td>Available</td>
                 </tr>
                 <tr>
-                  <th scope="row">Dark, light and system themes</th>
+                  <th scope="row">Dark, light, OLED and system themes</th>
                   <td>Available</td>
                 </tr>
                 <tr>
@@ -209,7 +210,14 @@
                 </tr>
                 <tr>
                   <th scope="row">Discover catalogue</th>
-                  <td>Fictional local preview; no installation</td>
+                  <td>
+                    Browse Modrinth and CurseForge; install supported content.
+                    Some CurseForge files require a website download.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Friends and encrypted messaging</th>
+                  <td>Available with an Azuria account and accepted friends</td>
                 </tr>
                 <tr>
                   <th scope="row">Microsoft / Minecraft account connection</th>
@@ -253,7 +261,7 @@
   </details>
           </section>
           <section id="accounts">
-            <h2>Microsoft sign-in</h2>
+            <h2>Accounts & sign-in</h2>
             <p>
               Azuria opens your default browser for Microsoft sign-in. The
               native app then checks Xbox and Minecraft Services access. Sign in
@@ -268,7 +276,38 @@
     <p>A personal Microsoft account with Minecraft Java Edition access. An organisation owning the app registration does not mean players should use a work or school account.</p>
   </details><details>
     <summary>What does signing out remove?<span aria-hidden="true">+</span></summary>
-    <p>Signing out removes the saved Azuria account from Windows Credential Manager. Your browser may stay signed in to Microsoft. Failed or cancelled account switches preserve the previously saved account.</p>
+    <p>Signing out of Minecraft removes its saved sign-in from Windows Credential Manager. Your browser may stay signed in to Microsoft. Your separate Azuria account has its own sign-out control. Failed or cancelled Minecraft account switches preserve the previously saved account.</p>
+  </details>
+          </section>
+          <section id="social">
+            <h2>Friends & messaging</h2>
+            <p>
+              Create or sign in to your Azuria account at
+              <a href="https://accounts.azuriasmp.org/"
+                >accounts.azuriasmp.org</a
+              >, then connect it in the launcher. This account is for Azuria’s
+              social features; you still need Microsoft sign-in and Minecraft
+              Java Edition access to play.
+            </p>
+            <details>
+    <summary>How do I add a friend?<span aria-hidden="true">+</span></summary>
+    <p>Open Social and use Manage friends to send a request by username. Once accepted, select your friend to open a text conversation. You can also manage incoming requests, remove friends and block accounts.</p>
+  </details>
+            <details>
+    <summary>Are messages encrypted?<span aria-hidden="true">+</span></summary>
+    <p>New messages are end-to-end encrypted in the launcher. You can compare a conversation’s security code with your friend through another trusted channel. Older messages sent before encryption remain unencrypted and are labelled. Encryption does not hide who you message or when, and this protocol has not had an independent security audit.</p>
+  </details>
+            <details>
+    <summary>Can I read messages on another PC?<span aria-hidden="true">+</span></summary>
+    <p>First save an encrypted recovery file from Messaging encryption &amp; recovery and keep its passphrase safe. On the other PC, sign in to the same Azuria account and restore that file. Without your original key or a usable recovery file, Azuria cannot recover your encrypted messages. There is no automatic messaging-key sync between devices.</p>
+  </details>
+            <details>
+    <summary>Will sign-in stay saved?<span aria-hidden="true">+</span></summary>
+    <p>The accounts website remembers your sign-in in the same browser, and the Windows launcher saves refresh credentials in Windows Credential Manager. Temporary connection failures preserve saved sign-in and the launcher can retry when you reconnect. Signing out, clearing browser site data or an expired or revoked session can require signing in again. Minecraft reconnection also follows your launcher privacy preference.</p>
+  </details>
+            <details>
+    <summary>When do new messages appear?<span aria-hidden="true">+</span></summary>
+    <p>Social refreshes while it is open and the launcher window is visible. Background push notifications, typing indicators, voice calls and online status are not available in this version.</p>
   </details>
           </section>
           <section id="privacy">

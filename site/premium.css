@@ -147,7 +147,7 @@
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 1280/900;
+  aspect-ratio: 1363/936;
   border-radius: 10px;
 }
 .premium-home .hero-shot figcaption {
@@ -238,7 +238,7 @@
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 1280/900;
+  aspect-ratio: 1363/936;
   border-radius: 8px;
 }
 .premium-section-top {
@@ -336,7 +336,7 @@
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 1280/900;
+  aspect-ratio: 1363/936;
   transform-origin: center;
 }
 .preview-stack > .preview-previous {
